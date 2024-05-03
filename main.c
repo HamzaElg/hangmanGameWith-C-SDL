@@ -82,9 +82,9 @@ int initializeSDL(void) {
         SDL_Quit();
         return FALSE;
     }
-    char hangmanImagePath[50];
     SDL_Surface* surface;
     for (int i = 0; i < 7; i++) {
+        char hangmanImagePath[50];
         sprintf(hangmanImagePath, "./src/hangman%d.png", i + 1);
         surface = IMG_Load(hangmanImagePath);
         if (!surface) {
@@ -102,19 +102,7 @@ int initializeSDL(void) {
 }
 
 
-// void setup() {
-//     rect.x = 20;
-//     ball.y = 20;
-//     ball.width = 15;
-//     ball.height = 15;
-// }
 void update() {
-
-}
-void render() {
-    SDL_SetRenderDrawColor(renderer,0,0,0,255);
-    SDL_RenderClear(renderer);
-    //Here we can start drawing our game
 
 }
 void footerMenu() {
@@ -156,46 +144,51 @@ void destroyWindow() {
 void drawHangman(int tries) {
     // Draw the corresponding hangman part based on the number of tries
     if(tries>=1) {
-        SDL_Rect hangmanRect1 = {1044, 51, Hangman1W, Hangman1H}; // Adjust the position and size as needed
-        SDL_RenderCopy(renderer, hangmanTextures[tries - 1], NULL, &hangmanRect1);
+        //LA CORDE
+        SDL_Rect hangmanRect0 = {1044, 51, Hangman1W, Hangman1H};
+        SDL_RenderCopy(renderer, hangmanTextures[0], NULL, &hangmanRect0);
     }
     if(tries>=2) {
-        SDL_Rect hangmanRect2 = {1044, 51+ Hangman1H, Hangman2W, Hangman2H}; // Adjust the position and size as needed
-        SDL_RenderCopy(renderer, hangmanTextures[tries - 1], NULL, &hangmanRect2);
+        //HEAD
+        SDL_Rect hangmanRect1 = {1014, 51+ Hangman1H - 6, Hangman2W, Hangman2H};
+        SDL_RenderCopy(renderer, hangmanTextures[1], NULL, &hangmanRect1);
     }
     if(tries>=3) {
-        SDL_Rect hangmanRect3 = {1044, 51 +Hangman1H+Hangman2H , Hangman3W, Hangman3H}; // Adjust the position and size as needed
-        SDL_RenderCopy(renderer, hangmanTextures[tries - 1], NULL, &hangmanRect3);
+        //BODY
+        SDL_Rect hangmanRect2 = {1050, 51 +Hangman1H+Hangman2H-10 , Hangman3W, Hangman3H};
+        SDL_RenderCopy(renderer, hangmanTextures[2], NULL, &hangmanRect2);
     }
     if(tries>=4) {
-        SDL_Rect hangmanRect4 = {1044, 51 +Hangman1H+Hangman2H+Hangman3H+100, Hangman4_5W, Hangman4_5H}; // Adjust the position and size as needed
-        SDL_RenderCopy(renderer, hangmanTextures[tries - 1], NULL, &hangmanRect4);
+        //LEFT HAND
+        SDL_Rect hangmanRect3 = {1014, 51 +Hangman1H+Hangman2H+ 32, Hangman4_5W, Hangman4_5H};
+        SDL_RenderCopy(renderer, hangmanTextures[3], NULL, &hangmanRect3);
     }
     if(tries>=5) {
-        SDL_Rect hangmanRect5 = {1044, 51 +Hangman1H+Hangman2H+Hangman3H, Hangman4_5W, Hangman4_5H}; // Adjust the position and size as needed
-        SDL_RenderCopy(renderer, hangmanTextures[tries - 1], NULL, &hangmanRect5);
+        //RIGHT hand
+        SDL_Rect hangmanRect4 = {1068, 51 +Hangman1H+Hangman2H+ 32, Hangman4_5W, Hangman4_5H};
+        SDL_RenderCopy(renderer, hangmanTextures[4], NULL, &hangmanRect4);
     }
     if(tries>=6) {
-        SDL_Rect hangmanRect6 = {1044, 51, Hangman6_7W, Hangman6_7H}; // Adjust the position and size as needed
-        SDL_RenderCopy(renderer, hangmanTextures[tries - 1], NULL, &hangmanRect6);
+        //LEFT LEG
+        SDL_Rect hangmanRect5 = {1004, 51 +Hangman1H+Hangman2H+ Hangman3H-32, Hangman6_7W, Hangman6_7H};
+        SDL_RenderCopy(renderer, hangmanTextures[5], NULL, &hangmanRect5);
     }
     if(tries>=7) {
-        SDL_Rect hangmanRect7 = {1044, 51, Hangman6_7W, Hangman6_7H}; // Adjust the position and size as needed
-        SDL_RenderCopy(renderer, hangmanTextures[tries - 1], NULL, &hangmanRect7);
+        SDL_Rect hangmanRect6 = {1068, 51 +Hangman1H+Hangman2H+ Hangman3H-32, Hangman6_7W, Hangman6_7H};
+        SDL_RenderCopy(renderer, hangmanTextures[6], NULL, &hangmanRect6);
     }
     SDL_RenderPresent(renderer);
 }
 int getRendomWord(char *word) {
     srand(time(NULL));
     FILE *file = fopen("C:/Users/Mez Work/CLionProjects/SdlPractice/src/capitals.txt", "r");
-
     if(file == NULL){
         printf("Error opening the words file");
         return FALSE;
     }
-    int aleo = rand() % 100 + 1;
+     int aleo = rand() % 100 + 1;
     int i=1;
-    while (fgets(word, sizeof(word), file) != NULL && i<= aleo) {
+    while (fgets(word, 80, file) != NULL && i<= aleo) {
         // Remove the newline character if it exists
         size_t len = strlen(word);
         if (len > 0 && word[len - 1] == '\n') {
@@ -234,8 +227,8 @@ int renderHiddenWord(const char *hiddenWord) {
     //position ou on veux ecrire le text.
     int textWidth, textHeight;
     SDL_QueryTexture(wordTexture, NULL, NULL, &textWidth, &textHeight);
-    int x = (WINDOWWIDTH - textWidth) / 2;
-    int y = 100; // Adjust the vertical position as needed
+    int x = 204;
+    int y = 296; // Adjust the vertical position as needed
 
     SDL_Rect wordRect = {x, y, textWidth, textHeight};
     SDL_RenderCopy(renderer, wordTexture, NULL, &wordRect);
@@ -246,6 +239,9 @@ int renderHiddenWord(const char *hiddenWord) {
 int main(int argc, char *argv[]) {
     char *word = malloc(80 * sizeof(char));
     char *hiddenWord = malloc(80 * sizeof(char));
+    char enteredCharacter = '\0';
+    char inputText[2];
+
     gameIsRunning = initializeSDL();
     //Function called once just to setup my game.
     // setup();
@@ -270,24 +266,51 @@ int main(int argc, char *argv[]) {
             case SDL_KEYDOWN:
                 if(event.key.keysym.sym == SDLK_ESCAPE)
                     gameIsRunning = FALSE;
-                /*else if (event.key.keysym.sym == SDLK_SPACE) {
-                    // Simulate the user making a guess (increasing tries)
-                    tries++;
-                    if (tries > 7) {
-                        tries = 7; // Limit to 7 tries
-                    }
-                    // Draw the hangman based on the number of tries
-                    drawHangman(tries);
+                else
+                    if (event.key.keysym.sym >= SDLK_a && event.key.keysym.sym <= SDLK_z) {
+                        //CURRENT CLEARING SOLUTION
+                        // Define a rectangle representing the area to clear
+                        SDL_Rect clearRect = {204, 484, 60, 80}; // Adjust the position and size as needed
+                        // Clear the specified area
+                        SDL_SetRenderDrawColor(renderer, 232, 164, 52, 255); // Set color to bg color fdik lblassa
+                        SDL_RenderFillRect(renderer, &clearRect);
 
-                    // If the user wins or loses, exit the loop
-                    if (tries == 7) {
-                        printf("You lose!\n");
-                        gameIsRunning = FALSE;
-                    } else if (tries == 1) {
-                        printf("You win!\n");
-                        gameIsRunning = FALSE;
-                    }
-                }*/
+                        enteredCharacter = (char)(event.key.keysym.sym);
+                        inputText[0] = enteredCharacter;
+                        inputText[1] = '\0';
+                        for(int i = 0; i < strlen(word) ; i++) {
+                            if(word[i] == inputText[0]) {
+                                hiddenWord[i]= inputText[0];
+                                // change=1;
+                            }
+                        }
+
+                        //CURRENT CLEARING SOLUTION TO CLEAR LAST HIDDEN WORD
+                        // Define a rectangle representing the area to clear
+                        SDL_Rect clearLastHiddenWord = {204, 296, 400, 80}; // Adjust the position and size as needed
+                        // Clear the specified area
+                        SDL_SetRenderDrawColor(renderer, 253, 188, 20, 255); // Set color to bg color fdik lblassa
+                        SDL_RenderFillRect(renderer, &clearLastHiddenWord);
+                        renderHiddenWord(hiddenWord);
+                }
+                if (enteredCharacter != '\0') {
+                    // Render the entered character on the screen
+                    SDL_Color textColor = {0, 0, 0, 255};
+                    SDL_Surface* charSurface = TTF_RenderText_Solid(font, inputText, textColor);
+                    SDL_Texture* charTexture = SDL_CreateTextureFromSurface(renderer, charSurface);
+
+                    // Adjust the position and size as needed
+                    int x = 204;
+                    int y = 484; // Adjust the vertical position as needed
+                    SDL_Rect charRect = {x, y, charSurface->w, charSurface->h};
+                    SDL_RenderCopy(renderer, charTexture, NULL, &charRect);
+
+                    SDL_FreeSurface(charSurface);
+                    SDL_DestroyTexture(charTexture);
+
+                    // Reset entered character
+                    enteredCharacter = '\0';
+                }
             break;
 
         }
