@@ -202,7 +202,7 @@ int getRendomWord(char *word) {
 }
 void hideMyWord(char* word, char*hiddenWord) {
     for(int i = 0; i < strlen(word) ; i++) {
-        if(word[i] == 10 || word[i] == '-')
+        if(word[i] == 32 || word[i] == '-')
             hiddenWord[i] = ' ';
         else {
             hiddenWord[i] = '-';
@@ -241,17 +241,18 @@ int main(int argc, char *argv[]) {
     char *hiddenWord = malloc(80 * sizeof(char));
     char enteredCharacter = '\0';
     char inputText[2];
+    int tenta = 0;
 
     gameIsRunning = initializeSDL();
     //Function called once just to setup my game.
     // setup();
-    drawHangman(1);
+    /*drawHangman(1);
     drawHangman(2);
     drawHangman(3);
     drawHangman(4);
     drawHangman(5);
     drawHangman(6);
-
+    drawHangman(7);*/
     getRendomWord(word);
     hideMyWord(word,hiddenWord);
     renderHiddenWord(hiddenWord);
@@ -268,7 +269,7 @@ int main(int argc, char *argv[]) {
                     gameIsRunning = FALSE;
                 else
                     if (event.key.keysym.sym >= SDLK_a && event.key.keysym.sym <= SDLK_z) {
-                        //CURRENT CLEARING SOLUTION
+                        //CURRENT CLEARING SOLUTION FOR LETTER
                         // Define a rectangle representing the area to clear
                         SDL_Rect clearRect = {204, 484, 60, 80}; // Adjust the position and size as needed
                         // Clear the specified area
@@ -278,20 +279,28 @@ int main(int argc, char *argv[]) {
                         enteredCharacter = (char)(event.key.keysym.sym);
                         inputText[0] = enteredCharacter;
                         inputText[1] = '\0';
-                        for(int i = 0; i < strlen(word) ; i++) {
+
+                        int change = 0;
+                        for(int i = 0; i < strlen(hiddenWord) ; i++) {
                             if(word[i] == inputText[0]) {
                                 hiddenWord[i]= inputText[0];
-                                // change=1;
+                                change=1;
                             }
                         }
-
+                        if(!change)
+                            tenta++;
                         //CURRENT CLEARING SOLUTION TO CLEAR LAST HIDDEN WORD
                         // Define a rectangle representing the area to clear
-                        SDL_Rect clearLastHiddenWord = {204, 296, 400, 80}; // Adjust the position and size as needed
+                        SDL_Rect clearLastHiddenWord = {204, 296, 472, 80}; // Adjust the position and size as needed
                         // Clear the specified area
                         SDL_SetRenderDrawColor(renderer, 253, 188, 20, 255); // Set color to bg color fdik lblassa
                         SDL_RenderFillRect(renderer, &clearLastHiddenWord);
                         renderHiddenWord(hiddenWord);
+                        drawHangman(tenta);
+                        if(tenta==7) {
+                            tenta=0;
+                            exit(0);
+                        }
                 }
                 if (enteredCharacter != '\0') {
                     // Render the entered character on the screen
