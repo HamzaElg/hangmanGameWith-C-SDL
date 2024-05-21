@@ -1,0 +1,85 @@
+le roi des animaux.
+couleur qui absorbe toutes les autres couleurs.
+Une couleur associée au ciel et à l'eau.
+Une couleur associée à la nature.
+Une couleur associée à la féminité.
+Une couleur neutre et pleine de contradictions.
+La capitale de l'Italie.
+Une émotion associée au bonheur.
+Une émotion associée à une sensation d'alarme.
+la capitale de Norvège.
+Capitale d'Ukraine.
+Animal mammifère carnivore.
+Animal domestique qui miaule.
+Oiseau de couleur vive, proche du perroquet.
+Île des Caraïbes célèbre pour sa culture, ses cigares et ses plages.
+Pays d'Afrique de l'Ouest, connu pour son riche patrimoine culturel et historique.
+Organe externe du corps humain qui constitue la barrière protectrice principale.
+Liquide rouge circulant dans les vaisseaux sanguins et transportant les nutriments et l'oxygène.
+Genre musical caractérisé par son improvisation.
+Genre musical énergique et rythmé.
+Œuvre cinématographique.
+Maison traditionnelle marocaine avec un patio intérieur.
+Marché traditionnel où l'on peut acheter une variété de produits.
+Aliment de base fabriqué à partir de farine et d'eau, souvent cuit au four.
+Liquide blanc produit par les mammifères, souvent consommé comme boisson.
+Boisson gazeuse sucrée et souvent aromatisée.
+Professionnel qualifié en cuisine.
+Langage de programmation polyvalent utilisé pour développer des applications logicielles.
+Langage de balisage utilisé pour créer et structurer des pages Web.
+Technologie sans fil permettant la connexion à Internet à partir de dispositifs compatibles.
+Instructions écrites dans un langage de programmation pour exécuter des actions spécifiques sur un ordinateur.
+Mammifère omnivore souvent associé à la force et à la robustesse.
+Légumineuse souvent consommée comme aliment de base.
+Sentiment de calme et d'harmonie.
+Deuxième pays le plus peuplé du monde, situé en Asie du Sud.
+Substance sucrée produite par les abeilles à partir du nectar des fleurs.
+Activités de divertissement ou de compétition qui impliquent des règles.
+Qualité de ce qui est coûteux, élégant et souvent associé à un statut social élevé.
+Sport où les joueurs utilisent des clubs pour frapper une balle dans un trou.
+Sport de combat où les participants se battent en utilisant des coups de poing.
+Art martial japonais où les participants utilisent des techniques de projection et de contrôle.
+Épreuve sportive d'endurance qui implique souvent la course, le vélo et la navigation.
+Action de se déplacer dans l'eau en utilisant des mouvements coordonnés des bras et des jambes.
+Antilope élégante, souvent trouvée dans les régions arides.
+Membre supérieur reliant l'épaule à la main.
+Organe interne situé dans la partie supérieure droite de l'abdomen.
+Partie du bas de la jambe sur laquelle on se tient debout.
+Partie terminale du bras comprenant les doigts et le pouce.
+Organes de la vision situés dans les orbites.
+Organe de la vision situé dans l'orbite.
+Structure du système nerveux transmettant des signaux électriques.
+Marque de vêtements et d'articles de sport.
+Chaîne de magasins de vêtements et d'accessoires de mode.
+Marque de vêtements et d'articles de sport.
+Entreprise japonaise spécialisée dans l'électronique et le divertissement.
+Constructeur automobile américain.
+Constructeur automobile italien.
+Constructeur automobile allemand.
+Console de jeu vidéo de Microsoft.
+Marque française de mode et de luxe.
+Ville française réputée pour sa cuisine et son patrimoine historique.
+Capitale du Pérou, connue pour son architecture coloniale espagnole.
+Ville balnéaire du sud de la France, sur la Côte d'Azur.
+Ville italienne sur la côte adriatique, connue pour sa vieille ville et ses plages.
+Capitale de la Lettonie, réputée pour son architecture Art nouveau.
+Ville marocaine située dans le Rif, connue pour ses sources thermales.
+Ville oasis dans le sud marocain, proche de la frontière algérienne.
+Ville universitaire au cœur de l'Iowa.
+Ville de jeu et de divertissement dans le désert du Nevada, célèbre pour ses casinos et ses spectacles.
+Ville située près de la frontière avec la Californie, connue pour son climat chaud et ensoleillé.
+Ville portuaire sur les rives du lac Érié.
+Ville du Texas située sur les rives du fleuve Brazos.
+Une marque américaine célèbre pour ses véhicules tout-terrain et son héritage militaire.
+Un vêtement féminin qui recouvre le corps et va généralement de la poitrine aux jambes.
+Un vêtement féminin qui couvre la partie inférieure du corps, allant de la taille aux genoux ou aux chevilles.
+Un pantalon en denim.
+Un vêtement traditionnel porté par les femmes en Inde.
+Une ville historique du sud-ouest de l'Angleterre, célèbre pour ses thermes romains.
+Située sur la côte sud de l'Irlande, c'est la deuxième plus grande ville d'Irlande.
+Le poisson-lune est un poisson marin géant, connu pour sa forme ovale plate et sa taille impressionnante.
+Poisson marin de grande taille et agile, souvent recherché pour sa chair savoureuse.
+Un petit mammifère marin de la famille des cétacés, ressemblant à un petit dauphin.
+Un mammifère marin semi-aquatique, avec une fourrure dense et hydrofuge.
+Mammifères marins semi-aquatiques, avec des membres adaptés à la nage et à la marche sur la terre ferme.
+Abréviation familière pour professeur.

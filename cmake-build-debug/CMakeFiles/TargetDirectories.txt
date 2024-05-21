@@ -1,0 +1,3 @@
+C:/Users/Mez Work/Desktop/HangmanGameFnct/cmake-build-debug/CMakeFiles/HangmanGameFnct.dir
+C:/Users/Mez Work/Desktop/HangmanGameFnct/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Mez Work/Desktop/HangmanGameFnct/cmake-build-debug/CMakeFiles/rebuild_cache.dir
